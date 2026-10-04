@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Word-Kompetenztrainer – Programm 3, Baustein E (Einfügen)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="missionpanel">
+    <div class="app-title">Einfügen</div>
+    <div class="brand">
+      <span class="brand-num" id="brandNum">E</span>
+      <span class="brand-name" id="familyLabel">Symbole, Bild &amp; mehr</span>
+    </div>
+
+    <div class="progress">
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-label" id="progressLabel">Mission 1 / 18</span>
+    </div>
+
+    <div id="panelBody"><!-- Erklärung / Demo / Aufgabe – wird von engine.js gerendert --></div>
+  </aside>
+
+  <main class="wordwindow">
+    <div class="titlebar">
+      <span class="titlebar-dot"></span>
+      <span class="titlebar-name" id="docName">Übungsdokument.docx</span>
+    </div>
+
+    <!-- Ribbon: entspricht der Registerkarte "Einfügen" in echtem Word -->
+    <div class="ribbon" id="ribbon">
+      <div class="ribbon-group" id="groupSymbole">
+        <span class="ribbon-label">Symbole</span>
+        <button type="button" class="rbtn rbtn-symbol" id="sym-copyright" data-symbol="©" title="Copyright">©</button>
+        <button type="button" class="rbtn rbtn-symbol" id="sym-pfeil" data-symbol="→" title="Pfeil">→</button>
+        <button type="button" class="rbtn rbtn-symbol" id="sym-stern" data-symbol="★" title="Stern">★</button>
+        <button type="button" class="rbtn rbtn-symbol" id="sym-euro" data-symbol="€" title="Euro">€</button>
+        <button type="button" class="rbtn rbtn-symbol" id="sym-haken" data-symbol="✓" title="Haken">✓</button>
+      </div>
+
+      <div class="ribbon-group" id="groupBilder">
+        <span class="ribbon-label">Illustrationen</span>
+        <button type="button" class="rbtn" id="btn-bild" title="Bild einfügen">🖼️ Bild</button>
+      </div>
+
+      <div class="ribbon-group" id="groupBildgroesse">
+        <span class="ribbon-label">Bildgröße</span>
+        <button type="button" class="rbtn rbtn-size" id="bild-klein" data-width="80" title="Klein">Klein</button>
+        <button type="button" class="rbtn rbtn-size" id="bild-mittel" data-width="160" title="Mittel">Mittel</button>
+        <button type="button" class="rbtn rbtn-size" id="bild-gross" data-width="260" title="Groß">Groß</button>
+      </div>
+
+      <div class="ribbon-group" id="groupKopfFuss">
+        <span class="ribbon-label">Kopf- &amp; Fußzeile</span>
+        <button type="button" class="rbtn" id="btn-kopfzeile" title="Kopfzeile bearbeiten">⬆ Kopfzeile</button>
+        <button type="button" class="rbtn" id="btn-fusszeile" title="Fußzeile bearbeiten">⬇ Fußzeile</button>
+      </div>
+
+      <div class="ribbon-group" id="groupText">
+        <span class="ribbon-label">Text</span>
+        <button type="button" class="rbtn" id="btn-textfeld" title="Textfeld einfügen">▭ Textfeld</button>
+      </div>
+    </div>
+
+    <div class="pagewrap">
+      <div class="page" id="page">
+        <div class="zone zone-header" id="headerZone" contenteditable="false" data-placeholder="Kopfzeile (hier eintragen)"></div>
+        <div class="editor" id="editor" contenteditable="false" spellcheck="false"></div>
+        <div class="zone zone-footer" id="footerZone" contenteditable="false" data-placeholder="Fußzeile (hier eintragen)"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+<script src="engine.js"></script>
+<script src="missionen.js"></script>
+</body>
+</html>
